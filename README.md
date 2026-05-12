@@ -15,6 +15,13 @@ The latest release can be found on the [Releases page](https://github.com/DukePa
 
 ## Installation
 
+### Via Custom Plugin Repository
+
+1. Open the Dalamud Plugin Installer with `/xlplugins` in chat.
+2. Go to **Settings → Experimental → Custom Plugin Repositories**.
+3. Add the following URL and click **Save**: https://raw.githubusercontent.com/DukePantarei/Dalamud.FullscreenCutscenes/main/repo.json
+4. Search for **Ultrawide Cutscenes** in the Available Plugins tab and install it.
+
 ### Manual / Developer Install
 
 1. Download `Dalamud.FullscreenCutscenes.dll` from the [latest release](https://github.com/DukePantarei/Dalamud.FullscreenCutscenes/releases/latest).
