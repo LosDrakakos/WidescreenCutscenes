@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
-   <Authors>DukePantarei</Authors>
+   <Authors>goat, Maple, DukePantarei</Authors>
     <Company></Company>
     <Version>1.0.0.8</Version>
     <Description>Removes letterboxing bars during cutscenes on ultrawide monitors.</Description>
