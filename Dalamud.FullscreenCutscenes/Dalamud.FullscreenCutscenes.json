@@ -4,7 +4,7 @@
   "Punchline": "Remove letterboxing from cutscenes on ultrawide monitors.",
   "Description": "Removes the letterboxing bars displayed during cutscenes on ultrawide monitors.\n\nNote: You may occasionally see NPCs popping in or T-posing at screen edges. This is expected.",
   "InternalName": "Dalamud.FullscreenCutscenes",
-  "RepoUrl": "https://github.com/DukePantarei/Dalamud.FullscreenCutscenes",
+  "RepoUrl": "https://github.com/MapleHinata/Dalamud.FullscreenCutscenes",
   "ApplicableVersion": "any",
   "Tags": [
     "ultrawide",

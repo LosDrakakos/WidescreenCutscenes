@@ -6,7 +6,7 @@
     <Version>1.0.0.8</Version>
     <Description>Removes letterboxing bars during cutscenes on ultrawide monitors.</Description>
     <Copyright></Copyright>
-    <PackageProjectUrl>https://github.com/DukePantarei/Dalamud.FullscreenCutscenes</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/MapleHinata/Dalamud.FullscreenCutscenes</PackageProjectUrl>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
 </Project>
