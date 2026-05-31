@@ -57,12 +57,12 @@ jobs:
       - name: Package release zip
         run: |
           cd WidescreenCutscenes/bin/x64/Release/
-          zip -r "$GITHUB_WORKSPACE/FullscreenCutscenes.zip" .
+          zip -r "$GITHUB_WORKSPACE/WidescreenCutscenes.zip" .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: FullscreenCutscenes
+          name: WidescreenCutscenes
           path: WidescreenCutscenes/bin/x64/Release/
           
       - name: Check if release already exists
@@ -84,7 +84,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "${{ steps.version.outputs.tag }}" \
-            FullscreenCutscenes.zip \
+            WidescreenCutscenes.zip \
             --target "$GITHUB_SHA" \
             --title "${{ steps.version.outputs.tag }}" \
             --notes "Release ${{ steps.version.outputs.version }}"
