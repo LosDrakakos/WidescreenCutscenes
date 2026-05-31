@@ -6,9 +6,13 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,11 +35,56 @@ jobs:
       - name: Build
         run: dotnet build --no-restore -c Release
 
-      - name: List build output
-        run: find . -name "*.dll" | grep -i fullscreen
+      - name: Read AssemblyVersion from repo.json
+        id: version
+        run: |
+          VERSION=$(python3 - <<'PY'
+          import json
+
+          with open("repo.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          print(data[0]["AssemblyVersion"])
+          PY
+          )
+
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+          echo "Release version: $VERSION"
+          echo "Release tag: v$VERSION"
+
+      - name: Package release zip
+        run: |
+          cd WidescreenCutscenes/bin/x64/Release/
+          zip -r "$GITHUB_WORKSPACE/FullscreenCutscenes.zip" .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: FullscreenCutscenes
-          path: Dalamud.FullscreenCutscenes/bin/x64/Release/
+          path: WidescreenCutscenes/bin/x64/Release/
+          
+      - name: Check if release already exists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: release_check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "${{ steps.version.outputs.tag }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release ${{ steps.version.outputs.tag }} already exists. Skipping release creation."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.release_check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            FullscreenCutscenes.zip \
+            --target "$GITHUB_SHA" \
+            --title "${{ steps.version.outputs.tag }}" \
+            --notes "Release ${{ steps.version.outputs.version }}"

@@ -6,7 +6,7 @@ using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Hooking;
 using Dalamud.Plugin.Services;
 
-namespace Dalamud.FullscreenCutscenes
+namespace WidescreenCutscenes
 {
     public sealed class Plugin : IDalamudPlugin
     {

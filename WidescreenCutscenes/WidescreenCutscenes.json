@@ -1,0 +1,14 @@
+{
+  "Author": "goat, Maple, DukePantarei",
+  "Name": "Ultrawide Cutscenes",
+  "Punchline": "Remove letterboxing from cutscenes on ultrawide monitors.",
+  "Description": "Removes the letterboxing bars displayed during cutscenes on ultrawide monitors.\n\nNote: You may occasionally see NPCs popping in or T-posing at screen edges. This is expected. (Also a Pathetic attempt to have this working outside the official Dalamud Repo because of the lack of updates.)",
+  "InternalName": "WidescreenCutscenes",
+  "RepoUrl": "https://github.com/LosDrakakos/WidescreenCutscenes",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "ultrawide",
+    "cutscene",
+    "fullscreen"
+  ]
+}

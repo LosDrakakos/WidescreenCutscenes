@@ -4,9 +4,9 @@
    <Authors>goat, Maple, DukePantarei</Authors>
     <Company></Company>
     <Version>1.0.0.8</Version>
-    <Description>Removes letterboxing bars during cutscenes on ultrawide monitors.</Description>
+    <Description>Removes letterboxing bars during cutscenes on ultrawide monitors. (Also a Pathetic attempt to have this working outside the official Dalamud Repo because of the lack of updates.)</Description>
     <Copyright></Copyright>
-    <PackageProjectUrl>https://github.com/MapleHinata/Dalamud.FullscreenCutscenes</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/LosDrakakos/WidescreenCutscenes</PackageProjectUrl>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
 </Project>

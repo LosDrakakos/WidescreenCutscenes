@@ -20,8 +20,8 @@ The plugin is active as soon as it's enabled — there's no configuration requir
 
 ## Credits
 
-- **[goaaats](https://github.com/goaaats/Dalamud.FullscreenCutscenes)** — original plugin author
-- **[MapleHinata](https://github.com/MapleHinata/Dalamud.FullscreenCutscenes)** — maintained fork
+- **[goaaats](https://github.com/goaaats/WidescreenCutscenes)** — original plugin author
+- **[MapleHinata](https://github.com/MapleHinata/WidescreenCutscenes)** — maintained fork
 - **aers** — discovered the underlying technique that makes this possible
 
 ## License
